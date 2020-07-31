@@ -1,10 +1,10 @@
-# Epoch Flip Clock
-Unix [epoch](https://en.wikipedia.org/wiki/Unix_time) flip clock macOS screensaver
+# Ancient Flip Clock
 
-![Epoch Flip Clock Screenshot](https://raw.githubusercontent.com/chrstphrknwtn/epoch-flip-clock/master/epochFlipClock.png)
+Chinese ancient time flip clock macOS screensaver
 
-## Install
-Download [`Epock Flip Clock.saver`](https://github.com/chrstphrknwtn/epoch-flip-clock-screensaver/releases/download/0.0.5/Epoch.Flip.Clock.0.0.5.saver.zip)
+> Based on [epoch-flip-clock-screensaver](https://github.com/chrstphrknwtn/epoch-flip-clock-screensaver)
+
+![Ancient Flip Clock Screenshot](./ancientFlipClock.png)
 
 ## Related
 - [Grid Clock Screensaver](https://github.com/chrstphrknwtn/grid-clock-screensaver)

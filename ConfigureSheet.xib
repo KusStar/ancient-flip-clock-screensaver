@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="EpochFlipClock">
+        <customObject id="-2" userLabel="File's Owner" customClass="AncientFlipClock">
             <connections>
                 <outlet property="configSheet" destination="QvC-M9-y7g" id="Neh-j4-32j"/>
                 <outlet property="screenDisplayOption" destination="osi-OU-YaU" id="iw1-KE-NYE"/>

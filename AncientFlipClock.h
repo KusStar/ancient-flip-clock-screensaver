@@ -1,6 +1,6 @@
 #import <ScreenSaver/ScreenSaver.h>
 
-@interface EpochFlipClock : ScreenSaverView
+@interface AncientFlipClock : ScreenSaverView
 {
     IBOutlet id configSheet;
     IBOutlet id screenDisplayOption;

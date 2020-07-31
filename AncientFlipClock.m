@@ -1,16 +1,16 @@
-#import "EpochFlipClock.h"
+#import "AncientFlipClock.h"
 #import <WebKit/WebKit.h>
 
-@implementation EpochFlipClock
+@implementation AncientFlipClock
 
-static NSString * const epochFlipClockModule = @"com.epochflipclock";
+static NSString * const AncientFlipClockModule = @"com.AncientFlipClock";
 
 - (id)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview {
     if (!(self = [super initWithFrame:frame isPreview:isPreview])) return nil;
     
     // Preference Defaults
     ScreenSaverDefaults *defaults;
-    defaults = [ScreenSaverDefaults defaultsForModuleWithName:epochFlipClockModule];
+    defaults = [ScreenSaverDefaults defaultsForModuleWithName:AncientFlipClockModule];
     
     [defaults registerDefaults:[NSDictionary dictionaryWithObjectsAndKeys:
         @"0", @"screenDisplayOption", // Default to show only on primary display
@@ -66,7 +66,7 @@ static NSString * const epochFlipClockModule = @"com.epochflipclock";
 - (NSWindow *)configureSheet
 {
     ScreenSaverDefaults *defaults;
-    defaults = [ScreenSaverDefaults defaultsForModuleWithName:epochFlipClockModule];
+    defaults = [ScreenSaverDefaults defaultsForModuleWithName:AncientFlipClockModule];
     
     if (!configSheet)
     {
@@ -89,7 +89,7 @@ static NSString * const epochFlipClockModule = @"com.epochflipclock";
 - (IBAction) okClick: (id)sender
 {
     ScreenSaverDefaults *defaults;
-    defaults = [ScreenSaverDefaults defaultsForModuleWithName:epochFlipClockModule];
+    defaults = [ScreenSaverDefaults defaultsForModuleWithName:AncientFlipClockModule];
     
     // Update our defaults
     [defaults setInteger:[screenDisplayOption indexOfSelectedItem]
