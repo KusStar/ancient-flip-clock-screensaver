@@ -2,116 +2,28 @@
 
 let digits = [];
 
-const numberToHanziMap = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+const 所有数字 = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
 
-const ancientHoursMap = {
-  '23': {
-    name: '子',
-    isNextHalf: false
-  },
-  '0': {
-    name: '子',
-    isNextHalf: true,
-  },
-  '1': {
-    name: '丑',
-    isNextHalf: false
-  },
-  '2': {
-    name: '丑',
-    isNextHalf: true
-  },
-  '3': {
-    name: '寅',
-    isNextHalf: false
-  },
-  '4': {
-    name: '寅',
-    isNextHalf: true
-  },
-  '5': {
-    name: '卯',
-    isNextHalf: false
-  },
-  '6': {
-    name: '卯',
-    isNextHalf: true
-  },
-  '7': {
-    name: '辰',
-    isNextHalf: false
-  },
-  '8': {
-    name: '辰',
-    isNextHalf: true
-  },
-  '9': {
-    name: '巳',
-    isNextHalf: false
-  },
-  '10': {
-    name: '巳',
-    isNextHalf: true
-  },
-  '11': {
-    name: '午',
-    isNextHalf: false
-  },
-  '12': {
-    name: '午',
-    isNextHalf: true
-  },
-  '13': {
-    name: '未',
-    isNextHalf: false
-  },
-  '14': {
-    name: '未',
-    isNextHalf: true
-  },
-  '15': {
-    name: '申',
-    isNextHalf: false
-  },
-  '16': {
-    name: '申',
-    isNextHalf: true
-  },
-  '17': {
-    name: '酉',
-    isNextHalf: false
-  },
-  '18': {
-    name: '酉',
-    isNextHalf: true
-  },
-  '19': {
-    name: '戌',
-    isNextHalf: false
-  },
-  '20': {
-    name: '戌',
-    isNextHalf: true
-  },
-  '21': {
-    name: '亥',
-    isNextHalf: false
-  },
-  '22': {
-    name: '亥',
-    isNextHalf: true
-  },
-}
+const 所有时辰 = [
+  '子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥', '亥',
+]
 
-function toHanzi(val) {
-  return numberToHanziMap[val]
-}
+const 所有时辰初点 = [23, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21]
 
-function getAncientHours(h, m) {
-  const { name, isNextHalf } = ancientHoursMap[h] 
-  let ke = (m / 15) | 0
-  if (isNextHalf) ke += 4
-  return `${name}时${toHanzi(ke)}刻`
+function getAncientFormat(h, m) {
+  const isEvent = (h & 1) === 0
+
+  let 时
+  let 刻 = (m / 15) | 0
+
+  if (isEvent) {
+    时 = 所有时辰[所有时辰初点.indexOf(h + 1) - 1]
+    刻 += 4
+  } else {
+    时 = 所有时辰[所有时辰初点.indexOf(h)]
+  }
+
+  return `${时}时${所有数字[刻]}刻`
 }
 
 function getEpoch() {
@@ -119,7 +31,7 @@ function getEpoch() {
   const h = d.getHours()
   const m = d.getMinutes()
 
-  return getAncientHours(h, m)
+  return getAncientFormat(h, m)
 }
 
 function createDigit() {
